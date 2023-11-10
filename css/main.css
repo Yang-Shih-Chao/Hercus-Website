@@ -65,7 +65,7 @@ header {
 /*網頁頭共同屬性*/
 header div {
     margin: 15px 50px 15px;
-    width: 100px;
+    width: 150px;
 }
 
 a:link {
@@ -109,7 +109,7 @@ nav ul li {
     border: var(--border-hide);
     border-radius: var(--radius-large);
     margin: 0 15px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .sociolMedia span {
@@ -128,6 +128,7 @@ span {
     color: aliceblue;
     display: inline-block;
     padding: 1px;
+    margin-left:10px;
     border: var(--border-show);
     border-radius: var(--radius-small);
 }
