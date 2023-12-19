@@ -233,6 +233,38 @@ footer div p {
         display: none;
     }
 
+    header div {
+        margin: 0;
+        width: 45%;
+    }
+
+    #logo {
+        width: 33%;
+    }
+
+    .menu {
+        display: block !important;
+    }
+    
+    .menuBurger{
+        clear: both;
+        background: #fff;
+        li {
+          text-align: center;
+          border-bottom: 1px solid #efefef;
+          a {
+            display: block;
+            padding: 10px 0;
+            font-size: 18px;
+            color: #5d5d5d;
+            &:hover {
+              background: #5d5d5d;
+              color: #fff;
+            }
+          }
+        }
+      }
+
     .sociolMedia {
         display: none;
     }
