@@ -1,4 +1,5 @@
 @import './reset.css';
+@import './RWD.css';
 
 /*預設高度，否則繼承子元素會沒有參考高度而無法顯示*/
 html,
@@ -38,6 +39,7 @@ p {
 /*圖片共同屬性*/
 img {
     width: 100%;
+    min-width: 20px;
     display: block;
 }
 
@@ -224,25 +226,6 @@ footer div p {
     padding: 10px;
 }
 
-@media only screen and (max-width: 500px) {
-    nav {
-        display: none;
-    }
-
-    .sociolMedia {
-        display: none;
-    }
-
-    .mainBackground {
-        /* Full height */
-        height: 100%;
-        width: 100%;
-        /* Center and scale the image nicely */
-        background-repeat: no-repeat;
-        background-position: 50% 90%;
-        background-size: cover;
-    }
-}
 
 /*手機板RWD*/
 @media only screen and (max-width: 500px) {
@@ -259,7 +242,7 @@ footer div p {
     }
 
     .mainBackground {
-        background-image: url("../images/main_dog_background.avif");
+        background-image: url("../images/main_dog_background_RWD.jpg");
         /* Full height */
         height: 100%;
         width: 100%;
@@ -270,7 +253,41 @@ footer div p {
     }
 
     .info {
-        display: none;
+        opacity: 1;
+        display: block;
+        animation-name: info;
+        animation-duration: 2s;
+    }
+
+    @keyframes info {
+        from {
+            left: 100%;
+        }
+
+        to {
+            left: 0%;
+            opacity: 1;
+        }
+    }
+
+    .info div {
+        text-align: center;
+        /* 必須設定與父元素的關係 */
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+
+    #dancerText {
+        position: relative;
+        top: 15%;
+        transform: translate(0, -50%);
+    }
+
+    #coderText {
+        position: relative;
+        bottom: -50%;
+        transform: translate(0, -50%);
     }
 
     /* footer */
@@ -279,18 +296,31 @@ footer div p {
         display: block;
     }
 
+    /* 底部字體垂直水平置中 */
     footer div {
         width: 100%;
-        text-align: center;
+        /* 垂直置中 */
+        text-align: center !important;
+        /* 必須設定與父元素的關係 */
         position: relative;
-        top: 40%;
+        /* 設定top一定要設定position不能為static */
+        top: 35%;
         transform: translate(0, -50%);
     }
 
     footer div p {
-        margin: 5px;
-        padding: 0px !important;
+        margin: 0px;
+        padding: 3px !important;
 
     }
 
+}
+
+/*手機板RWD 高度小於400px的舊手機*/
+@media only screen and (max-width: 376px) {
+    #coderText {
+        position: relative;
+        bottom: -40%;
+        transform: translate(0, -50%);
+    }
 }
