@@ -10,7 +10,21 @@
 </head>
 
 <body>
+
     <header>
+        <div class="RWDmenu" style="display: none;">
+            <input type="checkbox" id="menu">
+            <label for="menu" class="line">
+                <div class="menu"></div>
+            </label>
+            <div class="menu-list">
+                <ul>
+                    <li>Home</li>
+                    <li>Feature</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
         <div>
             <a href=""><img id="logo" src="./images/main_icom.png" alt="logo"></a>
         </div>
@@ -34,28 +48,21 @@
                 <a href="https://github.com/Yang-Shih-Chao"><img src="./images/github-logo.png" alt="github-Logo"></a>
             </span>
         </div>
-        <div class="menu" style="display: none;">
-            <ul class="menuBurger">
-                <li><a href="#">選項</a></li>
-                <li><a href="#">選項</a></li>
-                <li><a href="#">選項</a></li>
-                <li><a href="#">選項</a></li>
-            </ul>
-        </div>
+
     </header>
     <container>
         <section>
             <div class="mainBackground">
                 <!--放背景圖-->
                 <div class="info">
-                    <div id="dancerText">
+                    <div class="infoText" id="dancerText">
                         <p>Dancer</p>
                         <h1>A dance is a form of creative expression that involves moving the body in rhythm to musical
                             accompaniment. Dance has played an important role in human societies since ancient times and
                             continues to evolve and develop today.
                         </h1>
                     </div>
-                    <div id="coderText">
+                    <div class="infoText" id="coderText">
                         <p> &ltCoder&gt</p>
                         <h1>A coder is a professional who understands and writes in programming languages to command a
                             computer to perform specific tasks. Coders may also write code like HTML, CSS, JavaSricpt
@@ -72,7 +79,7 @@
             <p>&copy; Designed & Copyright by Hercus Yang 2023</p>
         </div>
         <div style="text-align: right;">
-            <p >歡迎合作邀約</p>
+            <p>歡迎合作邀約</p>
         </div>
     </footer>
 </body>
