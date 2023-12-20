@@ -60,6 +60,7 @@ header {
     background: linear-gradient(-30deg, rgb(176, 123, 236), rgb(240, 201, 63));
     /*background: linear-gradient(to bottom, rgb(81, 80, 80) 0%, rgb(0, 0, 0) 50%);
 */
+
 }
 
 header div {
@@ -193,7 +194,7 @@ nav ul li:hover {
 
 .info p {
     margin-top: 30px;
-    font-size: 60px;
+    font-size: 200%;
 }
 
 .info h1 {
@@ -235,35 +236,137 @@ footer div p {
 
     header div {
         margin: 0;
-        width: 45%;
+        /* div空間全部使用 */
+        width: 100%;
     }
 
     #logo {
         width: 33%;
+        position: relative;
+        transform: translate(-50%, 0);
+        left: 0%;
     }
 
-    .menu {
+    .RWDmenu {
         display: block !important;
     }
-    
-    .menuBurger{
-        clear: both;
-        background: #fff;
-        li {
-          text-align: center;
-          border-bottom: 1px solid #efefef;
-          a {
-            display: block;
-            padding: 10px 0;
-            font-size: 18px;
-            color: #5d5d5d;
-            &:hover {
-              background: #5d5d5d;
-              color: #fff;
-            }
-          }
-        }
-      }
+
+    /*
+選單線
+*/
+    .line {
+        width: 24px;
+        height: 24px;
+        display: block;
+        padding: 16px;
+        position: absolute;
+        z-index: 2;
+    }
+
+    .line .menu,
+    .line .menu::before,
+    .line .menu::after {
+        border: var(--border-hide);
+        border-radius: var(--radius-large);
+        box-shadow: 1px 1px 0px 1px black;
+        background: #ffffff;
+        content: '';
+        display: block;
+        height: 3px;
+        position: absolute;
+        transition: background ease .3s, top ease .3s .3s, transform ease .3s;
+        width: 30px;
+    }
+
+    .line .menu {
+        left: 35%;
+        top: 0px;
+    }
+
+    .line .menu::before {
+        top: -10px;
+    }
+
+    .line .menu::after {
+        top: 10px;
+    }
+
+    /*
+點選選單變叉叉
+*/
+    #menu:checked+.line .menu {
+        background: transparent;
+        box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+        /* 中間的橫槓隱藏 */
+    }
+
+    #menu:checked+.line .menu::before {
+        /* 選轉上下的偽元素(橫槓) */
+        transform: rotate(45deg);
+        /* 這個位移的集準點不清楚怎計算的 */
+        box-shadow: 0px 0px 0px 1px black;
+        left: 200%;
+    }
+
+    #menu:checked+.line .menu::after {
+        /* 選轉上下的偽元素(橫槓) */
+        transform: rotate(-45deg);
+        box-shadow: 0px 0px 0px 1px black;
+        left: 200%;
+    }
+
+    #menu:checked+.line .menu::before,
+    #menu:checked+.line .menu::after {
+        top: 0;
+        transition: top ease .3s, transform ease .3s .3s;
+    }
+
+    /*
+選單開合
+*/
+    #menu:checked~.menu-list {
+        width: 50%;
+    }
+
+    .menu-list {
+        width: 0px;
+        height: 100%;
+        background: #f7ce5d;
+        background: linear-gradient(-30deg, rgb(176, 123, 236), rgb(240, 201, 63));
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        padding-top: 25%;
+        top: 0px;
+        position: fixed;
+        z-index: 1;
+        transition: all .6s;
+        overflow: hidden;
+    }
+
+    /*
+選單向外推
+*/
+    .menu-list ul {
+        list-style: none;
+        margin-left: 50%;
+        transform: translate(-50%, 0);
+        padding: 0;
+        padding-bottom: 50px;
+    }
+
+    .menu-list ul>li {
+        display: block;
+        width: 100px;
+        color: #ffffff;
+        padding-bottom: 30%;
+        font-size: 30px
+    }
+
+    /*
+隱藏核許框
+*/
+    input#menu {
+        display: none;
+    }
 
     .sociolMedia {
         display: none;
@@ -287,8 +390,13 @@ footer div p {
     .info {
         opacity: 1;
         display: block;
+        background-color: rgba(0, 0, 0, 0);
         animation-name: info;
         animation-duration: 2s;
+    }
+
+    .info div p {
+        color: gray;
     }
 
     @keyframes info {
@@ -349,10 +457,14 @@ footer div p {
 }
 
 /*手機板RWD 高度小於400px的舊手機*/
-@media only screen and (max-width: 376px) {
+@media only screen and (max-width: 400px) {
     #coderText {
-        position: relative;
-        bottom: -40%;
-        transform: translate(0, -50%);
+        padding-bottom: 90px;
+    }
+    .infoText p{
+        font-size: 125%;
+    }
+    .infoText h1 {
+        font-size: medium;
     }
 }
