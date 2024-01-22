@@ -184,7 +184,6 @@ nav ul li:hover {
     /*離開緩慢消失該區域*/
 }
 
-
 /*主圖上的左右區塊文字*/
 .info div {
     margin-left: 75px;
@@ -193,7 +192,7 @@ nav ul li:hover {
 }
 
 .info p {
-    margin-top: 30px;
+    margin-top: 15%;
     font-size: 200%;
 }
 
@@ -208,9 +207,57 @@ nav ul li:hover {
     transition: opacity 0.75s;
 }
 
+.category {
+    height: 100%;
+    background-color: rgb(244, 244, 244);
+    display: flex;
+    /* 內容水平置中 */
+    justify-content: space-evenly;
+    /*  內容垂直置中 */
+}
+
+.category_type {
+    display: flex;
+    margin-top: 100px;
+    /* 因圖片往下推50px, 所以底部空間要再補50px */
+    margin-bottom: 130px;
+    width: 32%;
+    height: 300px;
+    min-height: 30%;
+}
+
+.category_type div {
+    height: 100%;
+    width: 50%;
+}
+
+.category_type_pic {
+    background-image: url("../images/1003w-xbZVW3mD5_4.webp");
+    margin-top: 30px;
+    margin-left: 30px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    box-shadow: 10px 10px 25px 1px rgba(11, 75, 91, 0.50);
+}
+
+.category_type_pic :hover{
+    transform:scale(1.2,1.2);
+}
+
+.category_type_text {
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.category_type_text p {
+    font-size: x-large;
+    text-align: center;
+}
+
 /* footer */
 footer {
-    height: 10%;
+    position: relative;
+    bottom: 0px;
     min-height: 50px;
     width: 100%;
     display: flex;
@@ -303,7 +350,7 @@ footer div p {
     #menu:checked+.line .menu::before {
         /* 選轉上下的偽元素(橫槓) */
         transform: rotate(45deg);
-        /* 這個位移的集準點不清楚怎計算的 */
+        /* 這個位移的基準點不清楚怎計算的 */
         box-shadow: 0px 0px 0px 1px black;
         left: 200%;
     }
@@ -340,6 +387,12 @@ footer div p {
         z-index: 1;
         transition: all .6s;
         overflow: hidden;
+    }
+
+    #divider {
+        height: 1px;
+        box-shadow: 0 2px 4px rgba(10, 10, 10, 10);
+        margin-bottom: 25px;
     }
 
     /*
@@ -461,9 +514,11 @@ footer div p {
     #coderText {
         padding-bottom: 90px;
     }
-    .infoText p{
+
+    .infoText p {
         font-size: 125%;
     }
+
     .infoText h1 {
         font-size: medium;
     }
