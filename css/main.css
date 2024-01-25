@@ -206,7 +206,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #1D3557;
+    color: #f7b26e;
 }
 
 #spare-time {
@@ -361,7 +361,7 @@ h5 {
 footer {
     position: relative;
     bottom: 0px;
-    height: 10%;
+    min-height: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;
