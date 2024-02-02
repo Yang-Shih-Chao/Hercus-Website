@@ -1,1 +1,111 @@
+.indroduction {
+    display: flex;
+    /*header就占10%高度*/
+    height: 600px;
+    background: linear-gradient(90deg, rgb(201, 201, 199), rgb(255, 255, 255));
+}
 
+.indroduction div {
+    width: 50%;
+}
+
+.avatar img {
+padding-left: 15%;
+    height: 100%;
+}
+
+.indroduction p {
+    padding: 25% 5% 0% 25%;
+    font-weight: bold;
+    color: rgb(105, 103, 101);
+    font-size: xx-large;
+    line-height:40px;
+}
+
+.indroduction h5 {
+    padding: 0% 5% 0% 35%;
+    color: rgb(105, 103, 101);
+    line-height:40px;
+}
+
+.link{
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 100%;
+    height: 1px;
+    border-top: solid #efac4e 3px;
+}
+
+.triangleUP{
+
+}
+
+.describle{
+
+}
+
+.triangleDown{
+    
+}
+
+
+
+.category {
+    height: 600px;
+    background: linear-gradient(90deg, rgb(201, 201, 199), rgb(255, 255, 255));
+    display: flex;
+    /* 內容水平置中 */
+    justify-content: space-evenly;
+    /*  內容垂直置中 */
+}
+
+.category_type {
+    margin-top: 100px;
+    /* 因圖片往下推50px, 所以底部空間要再補50px */
+    margin-bottom: 150px;
+    width: 33%;
+    height: 300px;
+    min-height: 30%;
+}
+
+.category_type_pic {
+    /* background-image: url("../images/1003w-xbZVW3mD5_4.webp"); */
+    height: 75%;
+    width: 90%;
+    margin-left: 5%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 10px 10px 25px 1px rgba(11, 75, 91, 0.50);
+    transition: all 0.25s;
+    /* 縮回原來大小的緩慢效果過程 */
+    border-radius: var(--radius-large);
+}
+
+.category_type_pic:hover {
+    transform: scale(1.25);
+    transition: transform 0.25s ease;
+    /* transition: all 0.5s ease-out; */
+}
+
+.category_type_text {
+    height: 40%;
+}
+
+.category_type_text p,
+h5 {
+    margin-top: 5%;
+}
+
+.category_type_text p {
+    font-size: x-large;
+    margin-left: 5%;
+    font-weight: bold;
+}
+
+.category_type_text h5 {
+    color: #ffffff;
+    margin-top: 2.5%;
+    margin-left: 20%;
+    margin-right: 5%;
+}
