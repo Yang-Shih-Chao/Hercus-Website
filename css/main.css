@@ -60,6 +60,20 @@ img {
     display: block;
 }
 
+
+.link{
+    margin-left: 40%;
+    margin-right: 40%;
+}
+.link::after
+{
+    content: "";
+    position: absolute;
+    background: #efac4e;
+    width: 25%;
+    height: 3px;
+}
+
 /*網站左上logo*/
 #logo {
     width: 40%;
