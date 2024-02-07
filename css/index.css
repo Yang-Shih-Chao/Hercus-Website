@@ -1,1 +1,129 @@
+.mainBackground {
+    background-image: url("../images/main_dog_background.avif");
+    /* Full height */
+    height:600px;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+    background-size: cover;
+}
 
+
+/* 滾動文字 */
+.rollingText {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    margin-left: 0% !important;
+    margin-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #F1FAEE;
+    font-size: xx-large;
+}
+
+.roller {
+    margin-top: 5%;
+    height: 4.125rem;
+    line-height: 4rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f7b26e;
+}
+
+#spare-time {
+    font-size: small;
+    font-style: italic;
+    letter-spacing: 0.5rem;
+    margin-top: 0;
+    color: #A8DADC;
+
+}
+
+.roller #rolltext {
+    position: absolute;
+    top: 0;
+    animation: slide 5s infinite;
+}
+
+@keyframes slide {
+    0% {
+        top: 0;
+    }
+
+    25% {
+        top: -4rem;
+    }
+
+    50% {
+        top: -8rem;
+    }
+
+    72.5% {
+        top: -12.25rem;
+    }
+}
+
+/* 滾動文字 */
+
+.info {
+    /* 不要占用到header的空間 */
+    top: 75px;
+    height:600px;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    /* flex-direction: column; */
+    /*交錯軸線位置與主軸線位置調換，因此內容物呈現直向排列*/
+    /* align-items: center; */
+    justify-content: center;
+    position:absolute;
+    /*絕對定位，不影響其他元素的空間且可以覆蓋其他元素*/
+    background-color: rgba(0, 0, 0, .3);
+    color: white;
+    font-size: 22px;
+
+    /*定位在父元素的最頂端*/
+    transition: all 0.5s linear;
+    /*離開緩慢消失該區域*/
+}
+
+/*主圖上的左右區塊文字*/
+.info div {
+    width: 25%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.info p,
+h1 {
+    text-align: left;
+}
+
+.info p {
+    margin-top: 75%;
+    font-size: 200%;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.info h1 {
+    margin-top: 20px;
+    color: rgb(202, 202, 202);
+    font-size: medium;
+
+}
+
+.info:hover {
+    opacity: 1;
+    transition: opacity 0.75s;
+}
