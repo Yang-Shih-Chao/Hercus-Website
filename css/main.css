@@ -1,7 +1,6 @@
 @import './reset.css';
 @import './RWD.css';
 
-
 /* 宣告 ： --自訂義名稱: 值;
 使用 ： 屬性: var(--自訂義名稱);
 
@@ -31,14 +30,13 @@ section {
     /*body會默認四邊留白*/
 }
 
-p,
-li,
-h1,
-h3,
-h5 {
+
+/* 字體屬性 */
+a,p,li,h1,h3,h5 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 22.5px;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    color: aliceblue;
 }
 
 a {
@@ -46,131 +44,72 @@ a {
     text-decoration: none;
 }
 
-
-/* 共同 */
-p {
-    color: aliceblue;
-}
-
-
-/*圖片共同屬性*/
 img {
-    width: 100%;
-    min-width: 20px;
-    display: block;
-}
-
-
-.link{
-    margin-left: 40%;
-    margin-right: 40%;
-}
-.link::after
-{
-    content: "";
-    position: absolute;
-    background: #efac4e;
-    width: 25%;
-    height: 3px;
-}
-
-/*網站左上logo*/
-#logo {
-    width: 40%;
-    height: 40%;
-    min-width:30px;
-}
-
-
-/* header: Logo. 標題 */
-header {
-    height: 75px;
-    display: flex;
-    /* 內容水平置中 */
-    justify-content: center;
-    /*  內容垂直置中 */
-    align-items: center;
-    background: linear-gradient(-30deg, rgb(250, 161, 161), rgb(240, 201, 63));
-    /* background: linear-gradient(-30deg, rgb(176, 123, 236), rgb(240, 201, 63)); */
-    /*background: linear-gradient(to bottom, rgb(81, 80, 80) 0%, rgb(0, 0, 0) 50%);
-*/
-    /*固定Header不讓它移動*/
-    /* position: sticky;
-top:0px */
-}
-
-header div {
-    margin: 15px 50px 15px;
-    width: 150px;
-}
-
-a:link {
-    color: red;
-}
-
-/* 未訪問的連結，字體顏色為紅色 */
-a:hover {
-    color: orange;
-}
-
-/* 滑鼠劃過連結時，字體顏色為橘色 */
-a:active {
-    color: yellow;
+    height: 100%;
 }
 
 /* 滑鼠點擊連結時，字體顏色為黃色 */
-a:visited {
-    color: green;
+
+nav, footer{
+    background: rgb(92, 92, 92);
 }
 
-/* 已訪問的連結，字體顏色為綠色 */
+header,
+footer, 
+nav,
+.sociolMedia {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header {
+    height: 10vh;
+    background: rgb(237, 237, 237);
+    justify-content: center;
+}
 
 /* nav: 導覽列 */
 nav {
-    margin: auto;
+    /* 定位置中但因為參考點是元素最左上方所以只有25% */
+    background: rgb(92, 92, 92);
+    height: 6vh;
 }
 
-nav ul,
-.sociolMedia {
-    display: flex;
-}
-
-nav ul li {
-    color: rgb(255, 255, 255);
-    width: 110px;
+nav div {
+    width: 25vw;
+    /* 四個選單內容等分切割 */
     text-align: center;
-    font-size: large;
+}
+
+nav div a h5 {
+    font-size: 3vh;
+    line-height: 6vh;
     border: var(--border-hide);
     border-radius: var(--radius-large);
-    margin: 0 15px;
-    padding: 5px;
+    transition: all 0.25s;
 }
 
-.sociolMedia span {
-    margin-right: 5px;
-}
-
-span {
-    padding: 1px;
-    margin-left: 10px;
+nav div a h5:hover {
+    cursor: pointer;
     border: var(--border-show);
+    background-color: rgb(255, 255, 255);
+    color: rgb(241, 113, 28);
+    transform: scale(1.25);
+    transition: transform 0.25s ease;
+}
+
+.sociolMedia {
+    padding: 0.5vh;
+}
+
+.sociolMedia-logo:hover{
+    transform: scale(1.25);
+    transition: transform 0.25s ease;
+}
+
+span{
     border-radius: var(--radius-small);
 }
-
-
-span:hover {
-    cursor: pointer;
-
-    color: azure;
-}
-
-nav ul li:hover {
-    cursor: pointer;
-    border: var(--border-show);
-    background-color: rgb(246, 194, 194);
-    color: azure;
-}
-
 
 .facebook:hover {
     background-color: rgb(17, 109, 148);
@@ -184,16 +123,9 @@ nav ul li:hover {
     background-color: rgb(141, 145, 146);
 }
 
-
-
 /* footer */
 footer {
-    position: relative;
-    height: 75px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background: linear-gradient(-30deg, rgb(250, 161, 161), rgb(240, 201, 63));
 }
 
 footer div {
@@ -201,10 +133,9 @@ footer div {
 }
 
 footer div p {
-    position: relative;
-    padding: 0% 5% 0% 5%;
-	top: 50%;
-    transform: translate(0, -50%);
+    font-size: 3vh;
+    line-height: 6vh;
+    padding: 0vw 3vw 0vw 3vw;
 }
 
 
