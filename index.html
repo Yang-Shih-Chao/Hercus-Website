@@ -12,68 +12,54 @@
 
 <body>
     <header>
-        <div class="RWDmenu" style="display: none;">
-            <input type="checkbox" id="menu">
-            <label for="menu" class="line">
-                <div class="menu"></div>
-            </label>
-            <div class="menu-list">
-                <div id="divider"></div>
-                <ul>
-                    <li>Home</li>
-                    <li>Feature</li>
-                    <li>Contact</li>
-                </ul>
-            </div>
+        <div class="header-logo">
+            <a href="./">
+                <img src="./images/header-logo.png">
+            </a>
+        </div>
+    </header>
+    <!-- nav: 導覽列 -->
+    <nav>
+        <div>
+            <a href="./index.html">
+                <h5>Who Am I</h5>
+            </a>
         </div>
         <div>
-            <a href=""><img id="logo" src="./images/main_icom.png" alt="logo"></a>
+            <a href="./profolio.html">
+                <h5>Projects</h5>
+            </a>
         </div>
-        <!-- nav: 導覽列 -->
-        <nav>
-            <ul>
-                <a href="./index.html">
-                    <li>Home</li>
-                </a>
-                <a href="./profolio.html">
-                    <li>Profolio</li>
-                </a>
-                <a href="./feature.html">
-                    <li>Feature</li>
-                </a>
-                <a href="./contact.html">
-                    <li>Contact</li>
-                </a>
-            </ul>
-        </nav>
+        <div>
+            <a href="./feature.html">
+                <h5>Articles</h5>
+            </a>
+        </div>
+        <div>
+            <a href="./feature.html">
+                <h5>Contact</h5>
+            </a>
+        </div>
         <div class="sociolMedia">
-            <span class="facebook">
+            <span class="facebook sociolMedia-logo">
                 <a href="https://www.facebook.com"><img src="./images/facebook-logo.png" alt="facebook-Logo"></a>
             </span>
-            <span class="instagram">
+            <span class="instagram sociolMedia-logo">
                 <a href="https://www.instagram.com/"><img src="./images/instagram-logo.png" alt="instagram-Logo"></a>
             </span>
-            <span class="github">
+            <span class="github sociolMedia-logo">
                 <a href="https://github.com/Yang-Shih-Chao"><img src="./images/github-logo.png" alt="github-Logo"></a>
             </span>
         </div>
-    </header>
-    <!-- 區塊分隔的陰影 -->
-    <div style="box-shadow: 0px 3px 30px 3px black; height: 0px;"></div>
+    </nav>
     <container>
         <div class="mainBackground">
             <div class="rollingText">
-                <h1 style="color: rgb(220, 161, 231);">Hercus Yang&nbsp</h1>
-                <h1>is purely A:
-                    <div class="roller">
-                        <span id="rolltext">Ideal<br />
-                            Positive<br />
-                            Passionate<br />
-                            <span id="spare-time">It's all me</span><br />
-                    </div>
-                </h1>
-
+                <div class="roller">
+                       <h5 id="rolltext">Scroll Down<br/>⤋</h5>
+                </div>
             </div>
+            <!-- 遮罩和內容 -->
             <div class="info">
                 <div class="infoText" id="dancerText">
                     <p>Dancer</p>
@@ -89,6 +75,8 @@
                     </h1>
                 </div>
             </div>
+        </div>
+        <div class="introduction">
         </div>
     </container>
     <div style="box-shadow: 0px 3px 30px 3px black; height: 0px;"></div>
