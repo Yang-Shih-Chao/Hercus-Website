@@ -2,44 +2,45 @@
     background-image: url("../images/main_dog_background.avif");
     /* Full height */
     /* 要處理不同大小顯示器高度比例不一致的問題 */
-    height: 84vh;
-    width: 100%;
+    height: 100vh;
     /* Center and scale the image nicely */
     background-repeat: no-repeat;
     background-position: 50% 80%;
-    background-size: cover;
+    background-size:cover;
 }
 
 
 /* 滾動文字 */
 .rollingText {
-    height: 84vh;
-    padding-top: 35vh;
+    height: 100vh;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
 }
 
 .roller {
-    height: 4.125rem;
-    line-height: 4rem;
+    Top: 85vh;
+    height: 100px;
+    line-height: 100px;
     position: relative;
     overflow: hidden;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 
 .roller #rolltext {
     position: absolute;
     top: 0;
-    font-size: 4vh;
+    font-size: 20px;
     font-weight: bold;
     animation: slide 2s infinite;
+}
+
+/*在外層包上<a>之後定位點會跑掉，要重新上*/
+#rolltext {
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 3px 3px 2px rgba(255, 3, 3, 0.2) !important;
 }
 
 @keyframes slide {
@@ -55,8 +56,8 @@
 /* 滾動文字 */
 .info {
     /* 不要占用到header的空間 */
-    top: 16vh;
-    height: 84vh;
+    top: 105px;
+    height: calc(100vh - 105px);
     width: 100%;
     opacity: 0;
     /* flex-direction: column; */
@@ -104,7 +105,7 @@ h1 {
     transition: opacity 0.75s;
 }
 
-.introduction{
+.introduction {
     height: 100vh;
-    background-color:aliceblue;
+    background-color: aliceblue;
 }
