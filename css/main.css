@@ -62,17 +62,27 @@ nav,
     justify-content: space-evenly;
 }
 
+header, nav{
+    position: fixed;
+    z-index: 100;
+    /*z-index的數字愈大，代表愈上層，同理愈小，代表愈底層。*/
+}
+
 header {
-    height: 10vh;
+    /* height: 10vh; */
+    height: 75px;
     background: rgb(237, 237, 237);
     justify-content: center;
+    width: 100%;
 }
 
 /* nav: 導覽列 */
 nav {
     /* 定位置中但因為參考點是元素最左上方所以只有25% */
     background: rgb(92, 92, 92);
-    height: 6vh;
+    margin-top: 75px;
+    height: 30px;
+    width: 100%;
 }
 
 nav div {
@@ -82,11 +92,12 @@ nav div {
 }
 
 nav div a h5 {
-    font-size: 3vh;
-    line-height: 6vh;
+    font-size: 15px;
+    line-height: 30px;
     border: var(--border-hide);
     border-radius: var(--radius-large);
     transition: all 0.25s;
+
 }
 
 nav div a h5:hover {
@@ -97,6 +108,7 @@ nav div a h5:hover {
     transform: scale(1.25);
     transition: transform 0.25s ease;
 }
+
 
 .sociolMedia {
     padding: 0.5vh;
@@ -133,7 +145,7 @@ footer div {
 }
 
 footer div p {
-    font-size: 3vh;
+    font-size: 10px;
     line-height: 6vh;
     padding: 0vw 3vw 0vw 3vw;
 }
