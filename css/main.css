@@ -19,22 +19,24 @@
     --radius-small: 5px;
 }
 
-/*預設高度，否則繼承子元素會沒有參考高度而無法顯示*/
 html,
 body,
-container,
+main,
 section {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    /*body會默認四邊留白*/
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0%;
+    background-color: #e0e0e0;
 }
 
-
 /* 字體屬性 */
-a,p,li,h1,h3,h5 {
+a,
+p,
+li,
+h1,
+h3,
+h5 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    line-height: 22.5px;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     color: aliceblue;
 }
@@ -48,41 +50,44 @@ img {
     height: 100%;
 }
 
-/* 滑鼠點擊連結時，字體顏色為黃色 */
-
-nav, footer{
+nav,
+footer {
     background: rgb(92, 92, 92);
 }
 
 header,
-footer, 
+footer,
 nav,
 .sociolMedia {
     display: flex;
     justify-content: space-evenly;
 }
 
-header, nav{
+header,
+nav {
     position: fixed;
     z-index: 100;
     /*z-index的數字愈大，代表愈上層，同理愈小，代表愈底層。*/
 }
 
 header {
-    /* height: 10vh; */
     height: 75px;
     background: rgb(237, 237, 237);
-    justify-content: center;
-    width: 100%;
+    max-width: 1920px;
+    width: 100vw;
 }
 
-/* nav: 導覽列 */
+#web-logo {
+    align-items: center;
+}
+
 nav {
     /* 定位置中但因為參考點是元素最左上方所以只有25% */
     background: rgb(92, 92, 92);
     margin-top: 75px;
     height: 30px;
-    width: 100%;
+    max-width: 1920px;
+    width: 100vw;
 }
 
 nav div {
@@ -92,6 +97,8 @@ nav div {
 }
 
 nav div a h5 {
+    /*無法確認為何h5的屬性本身自帶margin，因此補上0保證不會產生*/
+    margin: 0px;
     font-size: 15px;
     line-height: 30px;
     border: var(--border-hide);
@@ -109,17 +116,16 @@ nav div a h5:hover {
     transition: transform 0.25s ease;
 }
 
-
 .sociolMedia {
-    padding: 0.5vh;
+    padding: 0.25vw;
 }
 
-.sociolMedia-logo:hover{
+.sociolMedia-logo:hover {
     transform: scale(1.25);
     transition: transform 0.25s ease;
 }
 
-span{
+span {
     border-radius: var(--radius-small);
 }
 
@@ -145,11 +151,28 @@ footer div {
 }
 
 footer div p {
-    font-size: 10px;
-    line-height: 6vh;
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
     padding: 0vw 3vw 0vw 3vw;
 }
 
+/* footer */
+footer {
+    max-width: 1920px;
+    width: 100vW;
+}
+
+footer div {
+    width: 50%;
+}
+
+footer div p {
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0vw 3vw 0vw 3vw;
+}
 
 /*手機板RWD*/
 @media only screen and (max-width: 500px) {
