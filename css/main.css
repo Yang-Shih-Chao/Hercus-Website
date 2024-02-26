@@ -21,6 +21,9 @@
 
 html,
 body,
+header,
+nav,
+footer,
 main,
 section {
     max-width: 1920px;
@@ -28,6 +31,8 @@ section {
     padding: 0%;
     background-color: #e0e0e0;
 }
+
+
 
 /* 字體屬性 */
 a,
@@ -73,7 +78,6 @@ nav {
 header {
     height: 75px;
     background: rgb(237, 237, 237);
-    max-width: 1920px;
     width: 100vw;
 }
 
@@ -86,7 +90,6 @@ nav {
     background: rgb(92, 92, 92);
     margin-top: 75px;
     height: 30px;
-    max-width: 1920px;
     width: 100vw;
 }
 
@@ -159,7 +162,6 @@ footer div p {
 
 /* footer */
 footer {
-    max-width: 1920px;
     width: 100vW;
 }
 
