@@ -8,13 +8,6 @@
     margin-top: 105px;
 }
 
-.mainBackground img {
-    width: 100%;
-    object-fit: cover;
-    /* 要設定圖片位置一定要給寬跟高 */
-    object-position: 50% 90%;
-}
-
 /* 滾動文字 */
 .rollingText {
     position: absolute;
@@ -35,7 +28,7 @@
 
 #rolltext {
     text-shadow: 3px 3px 2px rgba(255, 3, 3, 0.2) !important;
-    z-index: 100;
+    z-index: 99;
 }
 
 .roller #rolltext {
@@ -80,18 +73,14 @@
 /*主圖上的左右區塊文字*/
 .info div {
     position: relative;
-    top: 30%;
     width: 33.3%;
     padding: 0% 5% 0% 5%;
 }
 
-.info p,
-h1 {
-    text-align: left;
-}
 
 .info p {
     font-size: 40px;
+    top: 30%;
 }
 
 .info h1 {
@@ -105,4 +94,45 @@ h1 {
 .info:hover {
     opacity: 1;
     transition: opacity 0.75s;
+}
+
+.section-div .two-colume {
+    background-color: rgb(233, 233, 233);
+    height: 300px;
+}
+
+.two-colume p,
+.two-colume h5 {
+    color: rgb(92, 92, 92);
+    margin: 20px 20px 0px 20px;
+}
+
+.two-colume p {
+    color: rgb(92, 92, 92);
+    font-size: 40px;
+    line-height: 50px;
+
+}
+
+.two-colume p::after {
+    content: "";
+    width: 50%;
+    height: 4px;
+    background-color: rgb(248, 192, 159);
+    display: block;
+    margin-left: 25%;
+    margin-top: 20px;
+}
+
+.two-colume h5 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: lighter;
+}
+
+.two-colume h5 + h5 {
+    position: relative;
+    color: rgb(255, 136, 1);
+    font-weight:bolder;
+    left: 25%;
 }
