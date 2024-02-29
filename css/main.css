@@ -36,8 +36,6 @@ section {
     scroll-behavior: smooth;
 }
 
-
-
 /* 字體屬性 */
 a,
 p,
@@ -57,6 +55,10 @@ a {
 
 img {
     height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* 要設定圖片位置一定要給寬跟高 */
+    object-position: 50% 90%;
 }
 
 nav,
@@ -92,7 +94,6 @@ header {
 
 nav {
     /* 定位置中但因為參考點是元素最左上方所以只有25% */
-    background: rgb(92, 92, 92);
     top: 75px;
     height: 30px;
     width: 100vw;
@@ -179,6 +180,39 @@ footer div p {
     height: 50px;
     line-height: 50px;
     padding: 0vw 3vw 0vw 3vw;
+}
+
+.section-div{
+    height: 100vh;
+    background-color:#ffffff;
+    padding: 10%;
+}
+
+.two-colume{
+    display: flex;
+    justify-content:space-between;
+    margin-top: 5%;
+}
+.two-colume div{
+    width: 50%;
+}
+
+.section-title{
+    text-align: center;
+    color: rgb(92, 92, 92);
+    font-size: 50px;
+    margin: auto;
+}
+
+.section-title::after{
+    content: "";
+    width: 15%;
+    height: 4px;
+    /* background-color: rgb(92, 92, 92); */
+    background-color: rgb(248, 192, 159); 
+    display: block;
+    margin: auto;
+    margin-top: 10px;
 }
 
 /*手機板RWD*/
