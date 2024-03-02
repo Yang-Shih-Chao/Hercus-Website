@@ -1,5 +1,7 @@
 @import './reset.css';
 @import './RWD.css';
+/* 特殊字體Yellowtail導入 */
+@import url('https://fonts.googleapis.com/css?family=Yellowtail');
 
 /* 宣告 ： --自訂義名稱: 值;
 使用 ： 屬性: var(--自訂義名稱);
@@ -43,9 +45,15 @@ li,
 h1,
 h3,
 h5 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Noto Sans TC,微軟正黑體,Microsoft JhengHei,sans-serif;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    /* text-shadow: 1px 1px 2px #000; */
     color: aliceblue;
+}
+
+.styled-title
+{
+    font-family:Yellowtail,cursive;
 }
 
 a {
@@ -185,7 +193,7 @@ footer div p {
 .section-div{
     height: 100vh;
     background-color:#ffffff;
-    padding: 10% 5% 10% 5%;
+    padding: 10% 5% 5% 5%;
 }
 
 .two-colume{
