@@ -23,6 +23,8 @@
     height: 25vh;
     position: relative;
     overflow: hidden;
+    padding: 0px 10px 0px 10px;
+    /* 字體是斜體把空間擠出去一點*/
 }
 
 
@@ -55,7 +57,7 @@
     top: 105px;
     height: calc(100vh - 105px);
     max-width: 1920px;
-    opacity: 1;
+    opacity: 0;
     /* flex-direction: column; */
     /*交錯軸線位置與主軸線位置調換，因此內容物呈現直向排列*/
     /* align-items: center; */
@@ -80,13 +82,13 @@
 
 .info p {
     position: relative;
-    top:30%;
+    top: 30%;
     font-size: 40px;
 }
 
 .info h1 {
     position: relative;
-    top:35%;
+    top: 35%;
     color: rgb(202, 202, 202);
     font-size: 20px;
     line-height: 5vh;
@@ -126,6 +128,10 @@
     margin-top: 20px;
 }
 
+.two-colume div h5 + h5 {
+    text-align: center;
+}
+
 .two-colume h5 {
     font-size: 20px;
     line-height: 30px;
@@ -136,17 +142,44 @@
     position: relative;
     margin-top: 10%;
     color: rgb(255, 136, 1);
-    font-weight:bolder;
-    left: 25%;
+    text-shadow: 3px 3px 2px rgba(255, 3, 3, 0.2) !important;
+    z-index: 99;
+
+    font-weight: bolder;
+    font-size: 40px;
 }
 
 /* 自我介紹圖黑白濾淨 */
-#indroduction .two-colume{
+#indroduction .two-colume {
     filter: grayscale(100%);
     transition: all 0.5s linear;
 }
 
-#indroduction .two-colume:hover{
+#indroduction .two-colume:hover {
     filter: grayscale(0%);
     transition: all 0.5s linear;
-} 
+}
+
+/*滾動視差圖片*/
+#parallax-pic {
+    height: 200px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 90% -50%;
+    background-size: cover;
+    background-image: url(../images/Dancer_Modifed.jpg);
+    text-align: center;
+}
+
+#parallax-pic p
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+}
+
+#exp{
+    height: 500px;
+}
