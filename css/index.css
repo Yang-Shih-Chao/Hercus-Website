@@ -55,7 +55,7 @@
     top: 105px;
     height: calc(100vh - 105px);
     max-width: 1920px;
-    opacity: 0;
+    opacity: 1;
     /* flex-direction: column; */
     /*交錯軸線位置與主軸線位置調換，因此內容物呈現直向排列*/
     /* align-items: center; */
@@ -79,12 +79,14 @@
 
 
 .info p {
+    position: relative;
+    top:30%;
     font-size: 40px;
-    top: 30%;
 }
 
 .info h1 {
-    margin-top: 5vh;
+    position: relative;
+    top:35%;
     color: rgb(202, 202, 202);
     font-size: 20px;
     line-height: 5vh;
@@ -98,7 +100,7 @@
 
 .section-div .two-colume {
     background-color: rgb(233, 233, 233);
-    height: 300px;
+    height: 400px;
 }
 
 .two-colume p,
@@ -132,7 +134,19 @@
 
 .two-colume h5 + h5 {
     position: relative;
+    margin-top: 10%;
     color: rgb(255, 136, 1);
     font-weight:bolder;
     left: 25%;
 }
+
+/* 自我介紹圖黑白濾淨 */
+#indroduction .two-colume{
+    filter: grayscale(100%);
+    transition: all 0.5s linear;
+}
+
+#indroduction .two-colume:hover{
+    filter: grayscale(0%);
+    transition: all 0.5s linear;
+} 
