@@ -68,8 +68,6 @@
     color: white;
     font-size: 22px;
     /*定位在父元素的最頂端*/
-    transition: all 0.5s linear;
-    /*離開緩慢消失該區域*/
 }
 
 /*主圖上的左右區塊文字*/
@@ -128,7 +126,7 @@
     margin-top: 20px;
 }
 
-.two-colume div h5 + h5 {
+.two-colume div h5+h5 {
     text-align: center;
 }
 
@@ -138,32 +136,20 @@
     font-weight: lighter;
 }
 
-.two-colume h5 + h5 {
+.two-colume h5+h5 {
     position: relative;
     margin-top: 10%;
     color: rgb(255, 136, 1);
     text-shadow: 3px 3px 2px rgba(255, 3, 3, 0.2) !important;
-    z-index: 99;
-
     font-weight: bolder;
     font-size: 40px;
-}
-
-/* 自我介紹圖黑白濾淨 */
-#indroduction .two-colume {
-    filter: grayscale(100%);
-    transition: all 0.5s linear;
-}
-
-#indroduction .two-colume:hover {
-    filter: grayscale(0%);
-    transition: all 0.5s linear;
+    z-index: 99;
 }
 
 /*滾動視差圖片*/
 #parallax-pic {
-    height: 200px;
-    margin: 0 auto;
+    height: 150px;
+    margin: 5% 0% 5% 0%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 90% -50%;
@@ -172,14 +158,26 @@
     text-align: center;
 }
 
-#parallax-pic p
-{
+#parallax-pic p {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     font-size: 50px;
 }
 
-#exp{
+#exp {
     height: 500px;
+}
+
+.exp-group {
+    display: flex;
+}
+
+.exp-row {
+    background: rgb(237, 237, 237);
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    background-size: cover;
+    text-align: center;
 }
