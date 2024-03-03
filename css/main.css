@@ -31,10 +31,10 @@ section {
     max-width: 1920px;
     margin: 0 auto;
     padding: 0%;
-    background-color: #e0e0e0;
+    /* background-color: #e0e0e0; */
     width: 100vw;
     /*無卷軸設定*/
-    overflow-x:hidden;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -45,15 +45,16 @@ li,
 h1,
 h3,
 h5 {
-    font-family: Noto Sans TC,微軟正黑體,Microsoft JhengHei,sans-serif;
+    font-family: Noto Sans TC, 微軟正黑體, Microsoft JhengHei, sans-serif;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     /* text-shadow: 1px 1px 2px #000; */
     color: aliceblue;
 }
 
-.styled-title
-{
-    font-family:Yellowtail,cursive;
+/* 特殊字體屬性 */
+.styled-title {
+    font-family: Yellowtail, cursive;
+    font-weight: lighter;
 }
 
 a {
@@ -90,7 +91,7 @@ nav {
 }
 
 header {
-    top:0px;
+    top: 0px;
     height: 75px;
     background: rgb(237, 237, 237);
     width: 100vw;
@@ -190,38 +191,57 @@ footer div p {
     padding: 0vw 3vw 0vw 3vw;
 }
 
-.section-div{
-    height: 100vh;
-    background-color:#ffffff;
-    padding: 10% 5% 5% 5%;
+.section-div {
+    background-color: #ffffff;
+    padding: 5% 5% 5% 5%;
 }
 
-.two-colume{
+.two-colume {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     margin-top: 5%;
 }
-.two-colume div{
+
+.two-colume div {
     width: 50%;
 }
 
-.section-title{
+.section-title {
     text-align: center;
     color: rgb(92, 92, 92);
     font-size: 50px;
     margin: auto;
 }
 
-.section-title::after{
+.section-title::after {
     content: "";
     width: 15%;
     height: 4px;
     /* background-color: rgb(92, 92, 92); */
-    background-color: rgb(248, 192, 159); 
+    background-color: rgb(248, 192, 159);
     display: block;
     margin: auto;
     margin-top: 10px;
 }
+
+/* 淡入淡出效果 */
+.fade-action{
+    transition: all 0.5s linear;
+}
+
+/* 黑白濾鏡 */
+.colorless {
+    filter: grayscale(100%);
+
+}
+
+.colorless:hover {
+    filter: grayscale(0%);
+
+}
+
+
+
 
 /*手機板RWD*/
 @media only screen and (max-width: 500px) {
