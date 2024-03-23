@@ -1,0 +1,38 @@
+/*滾動視差圖片*/
+#parallax-pic {
+    height: var(--content-height);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background-position: 90% -50%; */
+    background-size: cover;
+    background-image: url(../images/Dancer_Modifed_02.jpg);
+    text-align: center;
+    margin-top: 105px;
+}
+
+#parallax-pic p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 100px;
+    color: aliceblue; 
+
+}
+
+.projects {
+    margin-bottom: 5%;
+    height: 200px;
+}
+
+.projects img {
+    position: relative;
+    object-fit: contain;
+}
+
+.text-div{
+    padding: 10px 0% 5px 0%;
+}
+
+.button a:visited{
+    color: rgb(237, 237, 237);
+}
