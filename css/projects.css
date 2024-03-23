@@ -20,13 +20,16 @@
 }
 
 .projects {
-    margin-bottom: 5%;
-    height: 200px;
+    height: 250px;
 }
 
-.projects img {
+img[class="projects"] {
     position: relative;
-    object-fit: contain;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit:cover;
+    height: 250px;
+    width: 400px;
 }
 
 .text-div{
