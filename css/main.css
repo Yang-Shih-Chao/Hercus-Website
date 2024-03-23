@@ -19,6 +19,7 @@
     --border-hide: 0px solid transparent;
     --radius-large: 10px;
     --radius-small: 5px;
+    --content-height: calc(100vh - 105px);
 }
 
 html,
@@ -38,7 +39,7 @@ section {
     scroll-behavior: smooth;
 }
 
-/* 字體屬性 */
+/* 通用字體屬性 */
 a,
 p,
 li,
@@ -46,9 +47,21 @@ h1,
 h3,
 h5 {
     font-family: Noto Sans TC, 微軟正黑體, Microsoft JhengHei, sans-serif;
+}
+
+p {
+    font-size: 30px;
+    font-weight: bold;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    /* text-shadow: 1px 1px 2px #000; */
-    color: aliceblue;
+}
+
+.content {
+    color: rgb(92, 92, 92);
+    font-size: 20px;
+    line-height: 35px;
+    font-weight: lighter;
+    word-wrap: break-word;
+
 }
 
 /* 特殊字體屬性 */
@@ -57,7 +70,7 @@ h5 {
     font-weight: lighter;
 }
 
-a {
+* a {
     /* 去除超連結底線 */
     text-decoration: none;
 }
@@ -69,6 +82,55 @@ img {
     /* 要設定圖片位置一定要給寬跟高 */
     object-position: 50% 90%;
 }
+
+.date {
+    color: rgb(140, 140, 140);
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+/* .button {
+    font-size: 35;
+    font-weight: bolder;
+    color: rgb(241, 113, 28);
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle;
+    display: flex;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 45px;
+    border-width: 1.5px;
+    border-color: rgb(217, 217, 217);
+    transition: 0.3s;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        transition: .3s;
+    }
+} */
+
+.button {
+    font-size: 35;
+    font-weight: bolder;
+    color: rgb(237, 237, 237);
+    background-color: rgb(92, 92, 92);
+    border-radius: 55px 55px 55px;
+    padding: 10px;
+    border: 0.5px solid rgb(140, 140, 140);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.button:hover {
+    color:white;
+    background-color: rgb(241, 113, 28);
+    transition: 0.5s;
+}
+
 
 nav,
 footer {
@@ -122,7 +184,7 @@ nav div a h5 {
     border: var(--border-hide);
     border-radius: var(--radius-large);
     transition: all 0.25s;
-
+    color: aliceblue;
 }
 
 nav div a h5:hover {
@@ -173,6 +235,7 @@ footer div p {
     height: 50px;
     line-height: 50px;
     padding: 0vw 3vw 0vw 3vw;
+    color: aliceblue;
 }
 
 /* footer */
@@ -194,21 +257,19 @@ footer div p {
 
 .section-div {
     background-color: #ffffff;
-    padding: 5% 5% 5% 5%;
+    padding: 5% 5% 0% 5%;
 }
 
 .two-colume {
     display: flex;
     justify-content: space-between;
-    margin-top: 5%;
 }
 
-.two-colume div {
+.two-colume-div {
     width: 50%;
 }
 
 .section-title {
-    text-align: center;
     color: rgb(92, 92, 92);
     font-size: 50px;
     margin: auto;
@@ -221,12 +282,12 @@ footer div p {
     /* background-color: rgb(92, 92, 92); */
     background-color: rgb(248, 192, 159);
     display: block;
-    margin: auto;
+    /* margin: auto; */
     margin-top: 10px;
 }
 
 /* 淡入淡出效果 */
-.fade-action{
+.fade-action {
     transition: all 0.5s linear;
 }
 
