@@ -1,7 +1,7 @@
 .mainBackground,
 .mainBackground img,
 .rollingText {
-    height: calc(100vh - 105px);
+    height: var(--content-height);
 }
 
 .mainBackground {
@@ -38,6 +38,7 @@
     top: 0px;
     font-size: 30px;
     font-weight: bold;
+    color: aliceblue; 
     animation: slide 2s infinite;
 }
 
@@ -55,7 +56,7 @@
 .info {
     /* 不要占用到header的空間 */
     top: 105px;
-    height: calc(100vh - 105px);
+    height: var(--content-height);
     max-width: 1920px;
     opacity: 0;
     /* flex-direction: column; */
@@ -90,7 +91,7 @@
     color: rgb(202, 202, 202);
     font-size: 20px;
     line-height: 5vh;
-
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .info:hover {
@@ -105,13 +106,11 @@
 
 .two-colume p,
 .two-colume h5 {
-    color: rgb(92, 92, 92);
     margin: 20px 20px 0px 20px;
 }
 
 .two-colume p {
     color: rgb(92, 92, 92);
-    font-size: 40px;
     line-height: 50px;
 
 }
@@ -130,39 +129,17 @@
     text-align: center;
 }
 
-.two-colume h5 {
-    font-size: 20px;
-    line-height: 30px;
-    font-weight: lighter;
-}
-
 .two-colume h5+h5 {
     position: relative;
     margin-top: 10%;
     color: rgb(255, 136, 1);
-    text-shadow: 3px 3px 2px rgba(255, 3, 3, 0.2) !important;
-    font-weight: bolder;
+    text-shadow: 1px 2px 1px rgba(255, 3, 3, 0.2) !important;
     font-size: 40px;
     z-index: 99;
 }
 
-/*滾動視差圖片*/
-#parallax-pic {
-    height: 100px;
-    margin: 5% 0% 5% 0%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 90% -50%;
-    background-size: cover;
-    background-image: url(../images/Dancer_Modifed.jpg);
-    text-align: center;
-}
-
-#parallax-pic p {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 50px;
+.styled-title{
+    font-size: 70px;
 }
 
 .exp-group {
@@ -189,12 +166,6 @@
 .exp-row p {
     color: rgb(92, 92, 92);
     line-height: 35px;
-}
-
-.exp-row h5 {
-    font-size: 20px;
-    line-height: 35px;
-    font-weight: lighter;
 }
 
 .exp-row p {
