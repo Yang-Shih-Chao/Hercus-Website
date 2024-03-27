@@ -120,15 +120,40 @@ img {
     background-color: rgb(92, 92, 92);
     border-radius: 55px 55px 55px;
     padding: 10px;
-    border: 0.5px solid rgb(140, 140, 140);
     cursor: pointer;
     transition: 0.5s;
+}
+
+.button a:visited{
+    color: rgb(237, 237, 237);
 }
 
 .button:hover {
     color:white;
     background-color: rgb(241, 113, 28);
     transition: 0.5s;
+}
+
+input{
+    height: 30px;
+    border-radius: 10px 10px 10px;
+    border-style:solid;
+}
+
+textarea{
+    border-width: 2px;
+    border-radius: 10px 10px 10px;
+}
+
+
+textarea:focus, input:focus{
+    border-color: rgb(241, 113, 28);
+    border-width: 3px;
+}
+
+.text-div{
+    padding: 10px 0% 10px 0%;
+    margin: auto;
 }
 
 
