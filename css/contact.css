@@ -13,15 +13,19 @@ width: 30px;
 margin-right: 20px
 }
 
+.contact-way{
+    justify-content:left !important;
+}
+
+.contact-way p, .contact-way h5{
+    color: rgb(92, 92, 92);
+    text-shadow:none;
+}
+
 .input h5, .input p{
     font-size: 20px;
     color: rgb(92, 92, 92);
     display: inline-block;
-}
-
-
-.contact-way{
-    justify-content:left !important;
 }
 
 .important{
