@@ -193,6 +193,7 @@ nav {
     top: 75px;
     height: 30px;
     width: 100vw;
+    box-shadow: 5px 5px 5px #ccc;
 }
 
 nav div {
@@ -266,7 +267,8 @@ footer div p {
 /* footer */
 footer {
     margin-top: 5%;
-    width: 100vW;
+    width: 100vw;
+    box-shadow: -5px -5px 10px #ccc;
 }
 
 footer div {
