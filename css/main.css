@@ -228,7 +228,14 @@ nav div a h5:hover {
 }
 
 .sociolMedia {
-    padding: 0.25vw;
+    padding: 5px;
+    /* nax高度為30px，社交圖片高度為20px，剛好填滿 */
+}
+
+/* firefox不知元object-fit因此要多寫這個相容於瀏覽器 */
+.sociolMedia-logo{
+    height: 20px;
+    width: 20px;
 }
 
 .sociolMedia-logo:hover {
