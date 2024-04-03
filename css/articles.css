@@ -1,0 +1,15 @@
+.projects {
+    height: 250px;
+}
+
+img[class="projects"] {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit:cover;
+    height: 250px;
+    width: 400px;
+    box-shadow: 5px 5px 10px #ccc;
+}
+
+
