@@ -7,22 +7,22 @@ header=
 </div>\
 </header>\
 <nav>\
-<div>\
+<div class="nav-item">\
     <a href="./index.html">\
         <h5>About me</h5>\
     </a>\
 </div>\
-<div>\
+<div class="nav-item">\
     <a href="./projects.html">\
         <h5>Projects</h5>\
     </a>\
 </div>\
-<div>\
+<div class="nav-item">\
     <a href="./articles.html">\
         <h5>Articles</h5>\
     </a>\
 </div>\
-<div>\
+<div class="nav-item">\
     <a href="./contact.html">\
         <h5>Contact</h5>\
     </a>\
