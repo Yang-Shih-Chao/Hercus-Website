@@ -36,6 +36,7 @@ section {
     width: 100vw;
     /*無卷軸設定*/
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 nav,
@@ -271,7 +272,7 @@ footer div {
 
 footer div p {
     font-size: 12px;
-    height: 50px;
+    /* height: 50px; */
     line-height: 50px;
     padding: 0vw 3vw 0vw 3vw;
     color: aliceblue;
@@ -346,5 +347,14 @@ footer div p {
 
     .nav-item {
         display: none;
+    }
+
+    footer {
+        display: list-item;
+    }
+
+    footer div {
+        width: auto;
+        text-align: center;
     }
 }
