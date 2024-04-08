@@ -8,11 +8,11 @@
     margin-top: 105px;
 }
 
-#PC-BG{
+#PC-BG {
     display: block;
 }
 
-#RWD-BG{
+#RWD-BG {
     display: none;
 }
 
@@ -183,13 +183,8 @@
 
 /*手機板RWD*/
 @media only screen and (max-width: 500px) {
-    #PC-BG{
-        display: none;
-    }
-
-    #RWD-BG{
-        display: block;
-        object-position: 50% 10%;
+    #main_BG {
+        content: url("../images/RWD/main_BG_RWD.jpg");
     }
 
     .info p {
@@ -197,7 +192,7 @@
         top: 30%;
         font-size: 7vw;
     }
-    
+
     .info h1 {
         position: relative;
         top: 35%;
@@ -207,16 +202,16 @@
         text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     }
 
-    p{
+    p {
         font-size: 4vw;
     }
 
-    .content{
+    .content {
         font-size: 3.5vw;
-        line-height: 3.5vw !important;
+        line-height: 5.5vw !important;
     }
 
-    h5[class=styled-title]{
+    h5[class=styled-title] {
         font-size: 7.5vw !important;
     }
 
@@ -224,12 +219,31 @@
         background-color: rgb(233, 233, 233);
         height: 500px;
     }
-    
-    .two-colume p,  .two-colume h5{
+
+    /* .two-colume p,  .two-colume h5{
         margin: 1vw 2vw 0vw 2vw;
-    }
+    } */
 
     .section-div .two-colume {
         height: 100vw
+    }
+
+
+    .two-colume h5+h5 {
+        bottom: 1vh;
+    }
+
+    #introductionPic {
+        content: url("../images/RWD/introductionPic_RWD.jpg");
+        object-position: 110% 50%;
+    }
+
+    .exp-group{
+        display: inline;
+    }
+    
+    .exp-row{
+        width: auto !important;
+        height: 150px;
     }
 }
