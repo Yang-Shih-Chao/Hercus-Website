@@ -1,114 +1,249 @@
-<!DOCTYPE html>
-<html lang="en">
+.mainBackground,
+.mainBackground img,
+.rollingText {
+    height: var(--content-height);
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I am Hercus，目標當數位遊牧民族</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/index.css">
-</head>
+.mainBackground {
+    margin-top: 105px;
+}
 
-<body>
-    <script src="./js/header.js"></script>
-    <main>
-        <section>
-            <div class="mainBackground">
-                <div class="rollingText">
-                    <div class="roller">
-                        <a href="#indroduction">
-                            <h5 id="rolltext" class="styled-title">Click to Scroll<br />⤋</h5>
-                        </a>
-                    </div>
-                </div>
-                <img id="main_BG" src="./images/main_BG.jpg" alt="">
-            </div>
-            <div class="info fade-action">
-                <div class="infoText" id="dancerText">
-                    <p>Dancer</p>
-                    <h1>A dance is a form of creative expression that involves moving the body in rhythm to musical
-                        accompaniment.
-                    </h1>
-                </div>
-                <div></div>
-                <div class="infoText" id="coderText">
-                    <p> &ltCoder&gt</p>
-                    <h1>A coder is a professional who writes in programming languages to command a
-                        computer to perform specific tasks.
-                    </h1>
-                </div>
-            </div>
-            <div id="indroduction" class="section-div">
-                <p class="section-title">About Me</p>
-            </div>
-            <div id="motto" class="section-div">
-                <div class="two-colume">
-                    <div class="two-colume-div">
-                        <img id="introductionPic" src="./images/introductionPic.jpg">
-                        <!-- 無色黑白遮罩 -->
-                    </div>
-                    <div class="two-colume-div">
-                        <p>寧願累死</br> &nbsp&nbsp&nbsp&nbsp也不要無聊死。</p>
-                        <h5 class="content">
-                            人生不過三萬天，來是偶然，去是必然。<br>
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp帶走令人興奮又難忘的東西才值得來這一回。<br>
-                        </h5>
-                        <h5 class="styled-title">
-                            Because you only live once.
-                        </h5>
-                    </div>
-                </div>
-            </div>
-            <div class="section-div" style="text-align: center; font-size: 70px; ">
-                <p class="styled-title" style="color: rgb(92, 92, 92); margin: 10% 0% 10% 0%;">He runs for being late, I
-                    run for my self.</p>
-            </div>
-            <div id="exp" class="section-div">
-                <div class="exp-group">
-                    <div class="exp-row" style="width: 25%;">
-                        <div class="textbox">
-                            <h5 class="content">「數位空間像安靜的咖啡廳，讓我專心思考與創作」
-                            </h5>
-                            <p>－大學、研究所、職場，11年軟體開發。</p>
-                        </div>
-                    </div>
-                    <div class="exp-row colorless" style="width: 25%; background-image: url('./images/exp_pic3.jpg');">
-                    </div>
-                    <div class="exp-row colorless" style="width: 50%; background-image: url('./images/exp_pic4.jpg');">
-                    </div>
-                </div>
-                <div class="exp-group">
-                    <div class="exp-row colorless" style="width: 33%; background-image: url('./images/exp_pic1.jpg');">
-                    </div>
-                    <div class="exp-row" style="width: 33%;">
-                        <div class="textbox">
-                            <h5 class="content">「即使比別人慢開始，<br>也值得努力去嘗試」
-                            </h5>
-                            <p>－7年職業舞者，大學後才學舞。</p>
-                        </div>
-                    </div>
-                    <div class="exp-row colorless" style="width: 33%; background-image: url('./images/exp_pic2.jpg');">
-                    </div>
-                </div>
-                <div class="exp-group">
-                    <div class="exp-row colorless" style="width: 25%; background-image: url('./images/exp_pic7.jpg');">
-                    </div>
-                    <div class="exp-row colorless" style="width: 25%; background-image: url('./images/exp_pic6.jpg');">
-                    </div>
-                    <div class="exp-row colorless" style="width: 25%; background-image: url('./images/exp_pic5.jpg');">
-                    </div>
-                    <div class="exp-row" style="width: 25%;">
-                        <div class="textbox">
-                            <h5 class="content">「最有價值的體現，<br>是能夠聽內心的需求」
-                            </h5>
-                            <p>－房地產、貴金屬、人力資源顧問。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <script src="./js/footer.js"></script>
-</body>
+#PC-BG {
+    display: block;
+}
 
-</html>
+#RWD-BG {
+    display: none;
+}
+
+/* 滾動文字 */
+.rollingText {
+    position: absolute;
+    max-width: 1920px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.roller {
+    top: calc(100% - 105px);
+    height: 25vh;
+    position: relative;
+    overflow: hidden;
+    padding: 0px 10px 0px 10px;
+    /* 字體是斜體把空間擠出去一點*/
+}
+
+
+#rolltext {
+    text-shadow: 3px 3px 2px rgba(255, 3, 3, 0.2) !important;
+    z-index: 99;
+}
+
+.roller #rolltext {
+    position: relative;
+    top: 0px;
+    font-size: 30px;
+    font-weight: bold;
+    color: aliceblue;
+    animation: slide 2s infinite;
+}
+
+@keyframes slide {
+    0% {
+        top: 0;
+    }
+
+    25% {
+        top: 1.5rem;
+    }
+}
+
+/* 遮罩 */
+.info {
+    /* 不要占用到header的空間 */
+    top: 105px;
+    height: var(--content-height);
+    max-width: 1920px;
+    opacity: 0;
+    /* flex-direction: column; */
+    /*交錯軸線位置與主軸線位置調換，因此內容物呈現直向排列*/
+    /* align-items: center; */
+    position: absolute;
+    display: flex;
+    /*絕對定位，不影響其他元素的空間且可以覆蓋其他元素*/
+    background-color: rgba(0, 0, 0, .3);
+    color: white;
+    font-size: 22px;
+    /*定位在父元素的最頂端*/
+}
+
+/*主圖上的左右區塊文字*/
+.info div {
+    position: relative;
+    width: 33.3%;
+    padding: 0% 5% 0% 5%;
+}
+
+
+.info p {
+    position: relative;
+    top: 30%;
+    font-size: 40px;
+}
+
+.info h1 {
+    position: relative;
+    top: 35%;
+    color: rgb(202, 202, 202);
+    font-size: 20px;
+    line-height: 5vh;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.info:hover {
+    opacity: 1;
+    transition: opacity 0.75s;
+}
+
+.section-div .two-colume {
+    background-color: rgb(233, 233, 233);
+    height: 500px;
+}
+
+.two-colume p,
+.two-colume h5 {
+    margin: 20px 20px 0px 20px;
+}
+
+.two-colume p {
+    color: rgb(92, 92, 92);
+    line-height: 50px;
+
+}
+
+.two-colume p::after {
+    content: "";
+    width: 20vw;
+    height: 4px;
+    background-color: rgb(248, 192, 159);
+    display: block;
+    margin-left: 15%;
+    margin-top: 20px;
+}
+
+.two-colume div h5+h5 {
+    text-align: center;
+}
+
+.two-colume h5+h5 {
+    position: relative;
+    margin-top: 10%;
+    color: rgb(255, 136, 1);
+    text-shadow: 1px 2px 1px rgba(255, 3, 3, 0.2) !important;
+    font-size: 40px;
+    z-index: 99;
+}
+
+.styled-title {
+    font-size: 70px;
+}
+
+.exp-group {
+    display: flex;
+    height: 200px;
+}
+
+.exp-row {
+    background: rgb(237, 237, 237);
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+}
+
+.textbox {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.exp-row h5,
+.exp-row p {
+    color: rgb(92, 92, 92);
+    line-height: 35px;
+}
+
+.exp-row p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/*手機板RWD*/
+@media only screen and (max-width: 500px) {
+    #main_BG {
+        content: url("../images/RWD/main_BG_RWD.jpg");
+    }
+
+    .info p {
+        position: relative;
+        top: 30%;
+        font-size: 7vw;
+    }
+
+    .info h1 {
+        position: relative;
+        top: 35%;
+        color: rgb(202, 202, 202);
+        font-size: 3vw;
+        line-height: 3vh;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+        font-size: 4vw;
+    }
+
+    .content {
+        font-size: 3.5vw;
+        line-height: 5.5vw !important;
+    }
+
+    h5[class=styled-title] {
+        font-size: 7.5vw !important;
+    }
+
+    .section-div .two-colume {
+        background-color: rgb(233, 233, 233);
+        height: 500px;
+    }
+
+    /* .two-colume p,  .two-colume h5{
+        margin: 1vw 2vw 0vw 2vw;
+    } */
+
+    .section-div .two-colume {
+        height: 100vw
+    }
+
+
+    .two-colume h5+h5 {
+        bottom: 1vh;
+    }
+
+    #introductionPic {
+        content: url("../images/RWD/introductionPic_RWD.jpg");
+        object-position: 110% 50%;
+    }
+
+    .exp-group{
+        display: inline;
+    }
+    
+    .exp-row{
+        width: auto !important;
+        height: 150px;
+    }
+}
