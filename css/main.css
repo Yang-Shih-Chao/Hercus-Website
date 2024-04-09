@@ -142,12 +142,14 @@ img {
 
 input {
     height: 30px;
+    width: 300px;
     border-radius: 10px 10px 10px;
     border-style: solid;
 }
 
 textarea {
     border-width: 2px;
+    width: 300px;
     border-radius: 10px 10px 10px;
 }
 
@@ -349,12 +351,29 @@ footer div p {
         display: none;
     }
 
+    .section-title {
+        font-size: 10vw;   
+    }
+
     footer {
-        display: list-item;
+        display: block;
     }
 
     footer div {
         width: auto;
         text-align: center !important;
+    }
+
+    p {
+        font-size: 4vw;
+    }
+
+    .content {
+        font-size: 3.5vw;
+        line-height: 5.5vw !important;
+    }
+
+    input textarea{
+        width: 100vw;
     }
 }
