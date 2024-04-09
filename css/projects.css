@@ -15,7 +15,7 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 100px;
-    color: aliceblue; 
+    color: aliceblue;
 
 }
 
@@ -27,9 +27,25 @@ img[class="projects"] {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    object-fit:cover;
-    height: 250px;
-    width: 400px;
+    object-fit: cover;
+    width: 500px;
+    box-shadow: 5px 5px 10px #ccc;
 }
 
+@media only screen and (max-width: 500px) {
+    .two-colume {
+        display: block;
+    }
 
+    .two-colume-div{
+        width: auto;
+    } 
+
+    .projects {
+        height:auto;
+    }
+
+    img[class="projects"] {
+        width: 100%;  
+    }
+}
