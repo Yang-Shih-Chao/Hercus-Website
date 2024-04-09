@@ -186,6 +186,11 @@
     #main_BG {
         content: url("../images/RWD/main_BG_RWD.jpg");
     }
+    
+    #introductionPic {
+        content: url("../images/RWD/introductionPic_RWD.jpg");
+        object-position: 110% 50%;
+    }
 
     .info p {
         position: relative;
@@ -202,42 +207,16 @@
         text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     }
 
-    p {
-        font-size: 4vw;
-    }
-
-    .content {
-        font-size: 3.5vw;
-        line-height: 5.5vw !important;
-    }
-
+    
     h5[class=styled-title] {
         font-size: 7.5vw !important;
+        bottom: -5vh;
     }
 
-    .section-div .two-colume {
-        background-color: rgb(233, 233, 233);
+   .two-colume {
         height: 500px;
-    }
-
-    /* .two-colume p,  .two-colume h5{
-        margin: 1vw 2vw 0vw 2vw;
-    } */
-
-    .section-div .two-colume {
         height: 100vw
     }
-
-
-    .two-colume h5+h5 {
-        bottom: 1vh;
-    }
-
-    #introductionPic {
-        content: url("../images/RWD/introductionPic_RWD.jpg");
-        object-position: 110% 50%;
-    }
-
     .exp-group{
         display: inline;
     }
