@@ -1,56 +1,61 @@
-#contact-me{
+#contact-me {
     height: calc(var(--content-height) - 50px);
     margin-top: 105px;
 }
 
-.text-div{
-    padding-left: 25%;
+.contact-way img {
+    height: 30px;
+    width: 30px;
+    margin-right: 20px
 }
 
-.text-div img{
-height: 30px;
-width: 30px;
-margin-right: 20px
+.contact-way {
+    justify-content: left !important;
+    margin-top: 25px;
 }
 
-.contact-way{
-    justify-content:left !important;
+/* 雙欄表格本來就畫面的50%了，所以置中區塊只能再一半的比例 */
+.two-colume-div{
+    width: 25%;
+    padding-right: 12.5%;
+    padding-left: 12.5%;
 }
 
-.contact-way p, .contact-way h5{
+.contact-way p,
+.contact-way h5 {
     color: rgb(92, 92, 92);
-    text-shadow:none;
+    text-shadow: none;
 }
 
-.input h5, .input p{
+.input-group{
+    margin-bottom: 20px;
+}
+
+.input h5,
+.input p {
     font-size: 20px;
     color: rgb(92, 92, 92);
     display: inline-block;
 }
 
-.important{
+.important {
     color: red !important;
 }
 
 @media only screen and (max-width: 500px) {
     .two-colume {
-       display: block;
+        display: block;
     }
 
     .section-div {
         background-color: #ffffff;
-        padding: 5vw 15vw 0vw 15vw;
     }
 
-    .two-colume-div{
+    .two-colume-div {
         width: auto;
     }
 
-    .text-div {
-        padding-left: 0%;
-    }
-
-    textarea input{
-        width: 100vw;
-    }
+    .two-colume-div:last-child {
+        margin-top: 50px;
+     }
 }
