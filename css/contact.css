@@ -58,4 +58,8 @@
     .two-colume-div:last-child {
         margin-top: 50px;
      }
+     
+     .contact-way{
+        display: flex !important;
+     }
 }
