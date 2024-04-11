@@ -76,10 +76,11 @@ p {
     font-weight: lighter;
 }
 
-* a {
-    /* 去除超連結底線 */
+/* 超連結互動不變色 */
+a, a:visited, a:hover, a:active {
+    color: inherit;
     text-decoration: none;
-}
+  }
 
 img {
     height: 100%;
@@ -95,30 +96,6 @@ img {
     font-size: 15px;
 }
 
-/* .button {
-    font-size: 35;
-    font-weight: bolder;
-    color: rgb(241, 113, 28);
-    position: relative;
-    cursor: pointer;
-    vertical-align: middle;
-    display: flex;
-    width: 100px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 45px;
-    border-width: 1.5px;
-    border-color: rgb(217, 217, 217);
-    transition: 0.3s;
-
-    &:before,
-    &:after {
-        content: '';
-        position: absolute;
-        transition: .3s;
-    }
-} */
-
 .button {
     font-size: 35;
     font-weight: bolder;
@@ -128,10 +105,6 @@ img {
     padding: 10px;
     cursor: pointer;
     transition: 0.5s;
-}
-
-.button a:visited {
-    color: rgb(237, 237, 237);
 }
 
 .button:hover {
@@ -211,7 +184,7 @@ nav div {
     text-align: center;
 }
 
-nav div a h5 {
+.item-text {
     /*無法確認為何h5的屬性本身自帶margin，因此補上0保證不會產生*/
     margin: 0px;
     font-size: 15px;
@@ -222,7 +195,7 @@ nav div a h5 {
     color: aliceblue;
 }
 
-nav div a h5:hover {
+.item-text:hover {
     cursor: pointer;
     border: var(--border-show);
     background-color: rgb(255, 255, 255);
@@ -384,4 +357,158 @@ footer div p {
     input, textarea{
         width: 97.5%;
     }
+
+      /*
+選單線
+*/
+.RWDmenu {
+    display: block !important;
+}
+
+.RWDmenu {
+    position: absolute;
+    left: -10vw;
+}
+
+/* 隱藏通用CSS input的屬性 */
+#menu {
+    height: 0px !important;
+    width: 0px !important;
+}
+
+
+/* 點選後的交叉關閉圖不能消失*/
+.line {
+    width: 15px;
+    height: 15px;
+    /* display: block; */
+    position: absolute;
+    z-index: 2;
+}
+
+/* 漢堡圖線的樣式 */
+.line .menu,
+.line .menu::before,
+.line .menu::after {
+    content: '';
+    display: block;
+    border: var(--border-hide);
+    border-radius: var(--radius-large);
+    box-shadow: 1px 1px 0px 1px black;
+    background: #ffffff;
+    height: 3px;
+    position: absolute;
+    transition: background ease .3s, top ease .3s .3s, transform ease .3s;
+    width: 30px;
+}
+
+.line .menu {
+    top: 80%;
+}
+
+.line .menu::before {
+    top: -7.5px;
+}
+
+.line .menu::after {
+    top: 7.5px;
+}
+
+/*
+點選選單變叉叉
+*/
+#menu:checked+.line .menu {
+    background: transparent;
+    box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+    /* 中間的橫槓隱藏 */
+}
+
+#menu:checked+.line .menu::before {
+    /* 選轉上下的偽元素(橫槓) */
+    transform: rotate(45deg);
+    /* 這個位移的基準點不清楚怎計算的 */
+    box-shadow: 0px 0px 0px 1px black;
+    left: 18vw;
+    /* 因為有旋轉所以定位不好定位，目前不是很準的中心位 */
+}
+
+#menu:checked+.line .menu::after {
+    /* 選轉上下的偽元素(橫槓) */
+    transform: rotate(-45deg);
+    box-shadow: 0px 0px 0px 1px black;
+    left: 18vw;
+    /* 因為有旋轉所以定位不好定位，目前不是很準的中心位 */
+}
+
+#menu:checked+.line .menu::before,
+#menu:checked+.line .menu::after {
+    top: 0;
+    transition: top ease .3s, transform ease .3s .3s;
+}
+
+/*
+選單開合
+*/
+#menu:checked~.menu-list {
+    width: 50%;
+    /* .menu-list設成FIX所以它的父層參考body */
+    left: 0px;
+    /* 選單的展開定位在畫面最左邊開始 */
+    box-shadow: 1px 1px 50px 1px black;
+    /*點擊展開選單再加陰影，否則縮起來還是有陰影的邊緣在*/
+}
+
+.menu-list {
+    left: 0px;
+    /* 選單的展開定位在畫面最左邊開始 */
+    width: 0px;
+    height: 100%;
+    background: rgb(202, 202, 202);
+    top: 0px;
+    position: fixed;
+    z-index: 1;
+    transition: all .5s;
+    overflow: hidden;
+}
+
+/*
+選單向外推
+*/
+
+.menu-list div:first-child {
+    height: 75px;
+    width: 100%;
+    background-color: azure;
+}
+
+.menu-list #web-logo {
+    width: 100%;
+    height: 75px;
+    position: relative;
+    top: 70vw;
+}
+
+.menu-list div>a>img {
+    object-fit: contain;
+}
+
+.menu-list ul {
+    list-style-type: none;
+    /* border: 1px solid #ddd; */
+    margin-top: 30vw;
+}
+
+.menu-list ul>li {
+    color: aliceblue;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2) !important;
+    padding: 5vw 0vw 5vw 0vw;
+    font-size: 5vw;
+    font-weight: bold;
+    border-bottom: 3px solid #ddd;
+    border-radius: 100px;
+}
+
+/*
+隱藏核許框
+*/
 }
