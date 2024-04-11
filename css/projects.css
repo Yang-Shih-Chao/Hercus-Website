@@ -33,14 +33,6 @@ img[class="projects"] {
 }
 
 @media only screen and (max-width: 500px) {
-    .two-colume {
-        display: block;
-    }
-
-    .two-colume-div{
-        width: auto;
-    } 
-
     .projects {
         height:auto;
     }
