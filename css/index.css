@@ -8,14 +8,6 @@
     margin-top: 105px;
 }
 
-#PC-BG {
-    display: block;
-}
-
-#RWD-BG {
-    display: none;
-}
-
 /* 滾動文字 */
 .rollingText {
     position: absolute;
@@ -133,13 +125,10 @@
     margin-top: 20px;
 }
 
-.two-colume div h5+h5 {
-    text-align: center;
-}
-
-.two-colume h5+h5 {
+h5[class="styled-title"] {
     position: relative;
-    margin-top: 10%;
+    text-align: center;
+    top:15%;
     color: rgb(255, 136, 1);
     text-shadow: 1px 2px 1px rgba(255, 3, 3, 0.2) !important;
     font-size: 40px;
@@ -182,7 +171,7 @@
 }
 
 /*手機板RWD*/
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 800px) {
     #main_BG {
         content: url("../images/RWD/main_BG_RWD.jpg");
     }
@@ -213,10 +202,14 @@
         bottom: -5vh;
     }
 
-   .two-colume {
-        height: 500px;
-        height: 100vw
+    .section-div .two-colume {
+        height:auto;
     }
+
+    .two-colume-div{
+        height: 50vh;
+    }
+
     .exp-group{
         display: inline;
     }
@@ -225,4 +218,128 @@
         width: auto !important;
         height: 150px;
     }
+
+    .RWDmenu {
+        display: block !important;
+    }
+
+    /*
+選單線
+*/
+    .line {
+        width: 24px;
+        height: 24px;
+        display: block;
+        padding: 16px;
+        position: absolute;
+        z-index: 2;
+    }
+
+    .line .menu,
+    .line .menu::before,
+    .line .menu::after {
+        border: var(--border-hide);
+        border-radius: var(--radius-large);
+        box-shadow: 1px 1px 0px 1px black;
+        background: #ffffff;
+        content: '';
+        display: block;
+        height: 3px;
+        position: absolute;
+        transition: background ease .3s, top ease .3s .3s, transform ease .3s;
+        width: 30px;
+    }
+
+    .line .menu {
+        left: 35%;
+        top: 0px;
+    }
+
+    .line .menu::before {
+        top: -10px;
+    }
+
+    .line .menu::after {
+        top: 10px;
+    }
+
+    /*
+點選選單變叉叉
+*/
+    #menu:checked+.line .menu {
+        background: transparent;
+        box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+        /* 中間的橫槓隱藏 */
+    }
+
+    #menu:checked+.line .menu::before {
+        /* 選轉上下的偽元素(橫槓) */
+        transform: rotate(45deg);
+        /* 這個位移的基準點不清楚怎計算的 */
+        box-shadow: 0px 0px 0px 1px black;
+        left: 200%;
+    }
+
+    #menu:checked+.line .menu::after {
+        /* 選轉上下的偽元素(橫槓) */
+        transform: rotate(-45deg);
+        box-shadow: 0px 0px 0px 1px black;
+        left: 200%;
+    }
+
+    #menu:checked+.line .menu::before,
+    #menu:checked+.line .menu::after {
+        top: 0;
+        transition: top ease .3s, transform ease .3s .3s;
+    }
+
+    /*
+選單開合
+*/
+    #menu:checked~.menu-list {
+        width: 50%;
+    }
+
+    .menu-list {
+        width: 0px;
+        height: 100%;
+        background: #f7ce5d;
+        background: linear-gradient(-30deg, rgb(176, 123, 236), rgb(240, 201, 63));
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        padding-top: 25%;
+        top: 0px;
+        position: fixed;
+        z-index: 1;
+        transition: all .6s;
+        overflow: hidden;
+    }
+
+    #divider {
+        height: 1px;
+        box-shadow: 0 2px 4px rgba(10, 10, 10, 10);
+        margin-bottom: 25px;
+    }
+
+    /*
+選單向外推
+*/
+    .menu-list ul {
+        list-style: none;
+        margin-left: 50%;
+        transform: translate(-50%, 0);
+        padding: 0;
+        padding-bottom: 50px;
+    }
+
+    .menu-list ul>li {
+        display: block;
+        width: 100px;
+        color: #ffffff;
+        padding-bottom: 30%;
+        font-size: 30px
+    }
+
+    /*
+隱藏核許框
+*/
 }
