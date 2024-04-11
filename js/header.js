@@ -1,43 +1,514 @@
-header=
-'<header>\
-<div id="web-logo">\
-    <a href="./">\
-        <img src="./images/header-logo.png">\
-    </a>\
-</div>\
-</header>\
-<nav>\
-<div class="nav-item">\
-    <a href="./index.html">\
-        <h5>About me</h5>\
-    </a>\
-</div>\
-<div class="nav-item">\
-    <a href="./projects.html">\
-        <h5>Projects</h5>\
-    </a>\
-</div>\
-<div class="nav-item">\
-    <a href="./articles.html">\
-        <h5>Articles</h5>\
-    </a>\
-</div>\
-<div class="nav-item">\
-    <a href="./contact.html">\
-        <h5>Contact</h5>\
-    </a>\
-</div>\
-<div class="sociolMedia">\
-    <span class="facebook sociolMedia-logo">\
-        <a href="https://www.facebook.com"><img src="./images/facebook-logo.png" alt="facebook-Logo"></a>\
-    </span>\
-    <span class="instagram sociolMedia-logo">\
-        <a href="https://www.instagram.com/"><img src="./images/instagram-logo.png" alt="instagram-Logo"></a>\
-    </span>\
-    <span class="github sociolMedia-logo">\
-        <a href="https://github.com/Yang-Shih-Chao"><img src="./images/github-logo.png" alt="github-Logo"></a>\
-    </span>\
-</div>\
-</nav>\
-';
-document.write(header);
+@import './reset.css';
+@import './RWD.css';
+/* 特殊字體Yellowtail導入 */
+@import url('https://fonts.googleapis.com/css?family=Yellowtail');
+
+/* 宣告 ： --自訂義名稱: 值;
+使用 ： 屬性: var(--自訂義名稱);
+
+設定變數的好處是當有變動時，只要去修改設定的值，
+有套用此變數的都會一起被修改，
+不用一個一個去找，一個一個去改。
+
+:root 為網頁的 根元素 ，也可以設定在 body 或 html ，
+在此區域設定的變數，內層都可以使用。 */
+
+:root {
+    --width: 1200px;
+    --border-show: 0px solid gray;
+    --border-hide: 0px solid transparent;
+    --radius-large: 10px;
+    --radius-small: 5px;
+    --content-height: calc(100vh - 105px);
+}
+
+html,
+body,
+header,
+nav,
+footer,
+main,
+section {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0%;
+    /* background-color: #e0e0e0; */
+    width: 100vw;
+    /*無卷軸設定*/
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+nav,
+header {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* 通用字體屬性 */
+a,
+p,
+li,
+h1,
+h3,
+h5 {
+    font-family: Noto Sans TC, 微軟正黑體, Microsoft JhengHei, sans-serif;
+}
+
+p {
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    color: rgb(92, 92, 92);
+    font-size: 20px;
+    line-height: 35px;
+    font-weight: lighter;
+    word-wrap: break-word;
+
+}
+
+/* 特殊字體屬性 */
+.styled-title {
+    font-family: Yellowtail, cursive;
+    font-weight: lighter;
+}
+
+/* 超連結互動不變色 */
+a, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+  }
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* 要設定圖片位置一定要給寬跟高 */
+    object-position: 50% 90%;
+}
+
+.date {
+    color: rgb(140, 140, 140);
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.button {
+    font-size: 35;
+    font-weight: bolder;
+    color: rgb(237, 237, 237);
+    background-color: rgb(92, 92, 92);
+    border-radius: 55px 55px 55px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.button:hover {
+    color: white;
+    background-color: rgb(241, 113, 28);
+    transition: 0.5s;
+}
+
+input {
+    height: 30px;
+    width: 100%;
+    border-radius: 10px 10px 10px;
+    border-style: solid;
+}
+
+textarea {
+    border-width: 2px;
+    width: 100%;
+    border-radius: 10px 10px 10px;
+}
+
+
+textarea:focus,
+input:focus {
+    border-color: rgb(241, 113, 28);
+    border-width: 3px;
+}
+
+.text-div {
+    padding: 10px 0% 10px 0%;
+    margin: auto;
+}
+
+
+nav,
+footer {
+    background: rgb(92, 92, 92);
+}
+
+header,
+footer,
+nav,
+.sociolMedia {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header,
+nav {
+    position: fixed;
+    z-index: 100;
+    /*z-index的數字愈大，代表愈上層，同理愈小，代表愈底層。*/
+}
+
+header {
+    top: 0px;
+    height: 75px;
+    background: rgb(237, 237, 237);
+    width: 100vw;
+}
+
+#web-logo {
+    align-items: center;
+}
+
+nav {
+    /* 定位置中但因為參考點是元素最左上方所以只有25% */
+    top: 75px;
+    height: 30px;
+    width: 100vw;
+    box-shadow: 5px 5px 5px #ccc;
+}
+
+nav div {
+    width: 25vw;
+    /* 四個選單內容等分切割 */
+    text-align: center;
+}
+
+.item-text {
+    /*無法確認為何h5的屬性本身自帶margin，因此補上0保證不會產生*/
+    margin: 0px;
+    font-size: 15px;
+    line-height: 30px;
+    border: var(--border-hide);
+    border-radius: var(--radius-large);
+    transition: all 0.25s;
+    color: aliceblue;
+}
+
+.item-text:hover {
+    cursor: pointer;
+    border: var(--border-show);
+    background-color: rgb(255, 255, 255);
+    color: rgb(241, 113, 28);
+    transform: scale(1.25);
+    transition: transform 0.25s ease;
+}
+
+.sociolMedia {
+    padding: 5px;
+    /* nax高度為30px，社交圖片高度為20px，剛好填滿 */
+}
+
+/* firefox不知元object-fit因此要多寫這個相容於瀏覽器 */
+.sociolMedia-logo {
+    height: 20px;
+    width: 20px;
+}
+
+.sociolMedia-logo:hover {
+    transform: scale(1.25);
+    transition: transform 0.25s ease;
+}
+
+span {
+    border-radius: var(--radius-small);
+}
+
+.facebook:hover {
+    background-color: rgb(17, 109, 148);
+}
+
+.instagram:hover {
+    background-color: rgb(250, 16, 82)
+}
+
+.github:hover {
+    background-color: rgb(141, 145, 146);
+}
+
+/* footer */
+footer {
+    width: 100%;
+}
+
+footer div {
+    width: 50%;
+}
+
+footer div p {
+    font-size: 12px;
+    /* height: 50px; */
+    line-height: 50px;
+    padding: 0vw 3vw 0vw 3vw;
+    color: aliceblue;
+}
+
+/* footer */
+footer {
+    margin-top: 5%;
+    width: 100vw;
+    box-shadow: -5px -5px 10px #ccc;
+}
+
+footer div {
+    width: 50%;
+}
+
+footer div p {
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0vw 3vw 0vw 3vw;
+}
+
+.section-div {
+    background-color: #ffffff;
+    padding: 5% 5% 0% 5%;
+}
+
+.two-colume {
+    display: flex;
+    justify-content: space-between;
+}
+
+.two-colume-div {
+    width: 50%;
+}
+
+.section-title {
+    color: rgb(92, 92, 92);
+    font-size: 50px;
+    margin: auto;
+}
+
+.section-title::after {
+    content: "";
+    width: 15%;
+    height: 4px;
+    /* background-color: rgb(92, 92, 92); */
+    background-color: rgb(248, 192, 159);
+    display: block;
+    /* margin: auto; */
+    margin-top: 10px;
+}
+
+/* 淡入淡出效果 */
+.fade-action {
+    transition: all 0.5s linear;
+}
+
+/* 黑白濾鏡 */
+.colorless {
+    filter: grayscale(100%);
+
+}
+
+.colorless:hover {
+    filter: grayscale(0%);
+
+}
+
+@media only screen and (max-width: 800px) {
+
+    .nav-item {
+        display: none;
+    }
+
+    .section-title {
+        font-size: 10vw;   
+    }
+
+    footer {
+        display: block;
+    }
+
+    footer div {
+        width: auto;
+        text-align: center !important;
+    }
+
+    p {
+        font-size: 4vw;
+    }
+
+    .content {
+        font-size: 3.5vw;
+        line-height: 5.5vw !important;
+    }
+
+    .two-colume {
+        display: block;
+    }
+
+    .two-colume-div{
+        width: auto;
+    } 
+
+    input, textarea{
+        width: 97.5%;
+    }
+
+      /*
+選單線
+*/
+.RWDmenu {
+    display: block !important;
+}
+
+.RWDmenu {
+    position: absolute;
+    left: -10vw;
+}
+
+/* 隱藏通用CSS input的屬性 */
+#menu {
+    height: 0px !important;
+    width: 0px !important;
+}
+
+
+/* 點選後的交叉關閉圖不能消失*/
+.line {
+    width: 15px;
+    height: 15px;
+    /* display: block; */
+    position: absolute;
+    z-index: 2;
+}
+
+/* 漢堡圖線的樣式 */
+.line .menu,
+.line .menu::before,
+.line .menu::after {
+    content: '';
+    display: block;
+    border: var(--border-hide);
+    border-radius: var(--radius-large);
+    box-shadow: 1px 1px 0px 1px black;
+    background: #ffffff;
+    height: 3px;
+    position: absolute;
+    transition: background ease .3s, top ease .3s .3s, transform ease .3s;
+    width: 30px;
+}
+
+.line .menu {
+    top: 80%;
+}
+
+.line .menu::before {
+    top: -7.5px;
+}
+
+.line .menu::after {
+    top: 7.5px;
+}
+
+/*
+點選選單變叉叉
+*/
+#menu:checked+.line .menu {
+    background: transparent;
+    box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+    /* 中間的橫槓隱藏 */
+}
+
+#menu:checked+.line .menu::before {
+    /* 選轉上下的偽元素(橫槓) */
+    transform: rotate(45deg);
+    /* 這個位移的基準點不清楚怎計算的 */
+    box-shadow: 0px 0px 0px 1px black;
+    left: 18vw;
+    /* 因為有旋轉所以定位不好定位，目前不是很準的中心位 */
+}
+
+#menu:checked+.line .menu::after {
+    /* 選轉上下的偽元素(橫槓) */
+    transform: rotate(-45deg);
+    box-shadow: 0px 0px 0px 1px black;
+    left: 18vw;
+    /* 因為有旋轉所以定位不好定位，目前不是很準的中心位 */
+}
+
+#menu:checked+.line .menu::before,
+#menu:checked+.line .menu::after {
+    top: 0;
+    transition: top ease .3s, transform ease .3s .3s;
+}
+
+/*
+選單開合
+*/
+#menu:checked~.menu-list {
+    width: 50%;
+    /* .menu-list設成FIX所以它的父層參考body */
+    left: 0px;
+    /* 選單的展開定位在畫面最左邊開始 */
+    box-shadow: 1px 1px 50px 1px black;
+    /*點擊展開選單再加陰影，否則縮起來還是有陰影的邊緣在*/
+}
+
+.menu-list {
+    left: 0px;
+    /* 選單的展開定位在畫面最左邊開始 */
+    width: 0px;
+    height: 100%;
+    background: rgb(202, 202, 202);
+    top: 0px;
+    position: fixed;
+    z-index: 1;
+    transition: all .5s;
+    overflow: hidden;
+}
+
+/*
+選單向外推
+*/
+
+.menu-list div:first-child {
+    height: 75px;
+    width: 100%;
+    background-color: azure;
+}
+
+.menu-list #web-logo {
+    width: 100%;
+    height: 75px;
+    position: relative;
+    top: 70vw;
+}
+
+.menu-list div>a>img {
+    object-fit: contain;
+}
+
+.menu-list ul {
+    list-style-type: none;
+    /* border: 1px solid #ddd; */
+    margin-top: 30vw;
+}
+
+.menu-list ul>li {
+    color: aliceblue;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2) !important;
+    padding: 5vw 0vw 5vw 0vw;
+    font-size: 5vw;
+    font-weight: bold;
+    border-bottom: 3px solid #ddd;
+    border-radius: 100px;
+}
+
+/*
+隱藏核許框
+*/
+}
