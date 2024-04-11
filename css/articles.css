@@ -12,4 +12,13 @@ img[class="projects"] {
     box-shadow: 5px 5px 10px #ccc;
 }
 
+@media only screen and (max-width: 500px) {
+    .projects {
+        height:auto;
+    }
+
+    img[class="projects"] {
+        width: 100%;  
+    }
+}
 
