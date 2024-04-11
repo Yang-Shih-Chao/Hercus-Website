@@ -345,7 +345,7 @@ footer div p {
 
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 800px) {
 
     .nav-item {
         display: none;
@@ -372,6 +372,14 @@ footer div p {
         font-size: 3.5vw;
         line-height: 5.5vw !important;
     }
+
+    .two-colume {
+        display: block;
+    }
+
+    .two-colume-div{
+        width: auto;
+    } 
 
     input, textarea{
         width: 97.5%;
